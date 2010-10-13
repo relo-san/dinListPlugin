@@ -20,12 +20,12 @@ DinList:
 
     columns:
         id:                 { type: 'integer(4)', primary: true, autoincrement: true }
-        model:              { type: 'string(150)', fixed: true, notnull: true }
-        name:               { type: 'string(150)', fixed: true, notnull: true }
+        model:              { type: 'string(150)', notnull: true }
+        name:               { type: 'string(150)', notnull: true }
         is_enabled:         { type: 'boolean', notnull: true, default: true }
         is_editable:        { type: 'boolean', notnull: true, default: true }
         key_type:           { type: 'integer(1)', notnull: true, default: '1' }
-        title:              { type: 'string(150)', fixed: true }
+        title:              { type: 'string(150)' }
         description:        { type: 'clob(65532)' }
         sequence:           { type: 'integer(4)' }
 
@@ -44,13 +44,13 @@ DinListField:
     columns:
         id:                 { type: 'integer(4)', primary: true, autoincrement: true }
         list_id:            { type: 'integer(4)', notnull: true }
-        name:               { type: 'string(150)', fixed: true, notnull: true }
+        name:               { type: 'string(150)', notnull: true }
         type:               { type: 'integer(1)', notnull: true, default: '1' }
         is_enabled:         { type: 'boolean', notnull: true, default: true }
         is_i18n:            { type: 'boolean', notnull: true, default: true }
         is_editable:        { type: 'boolean', notnull: true, default: true }
         is_listable:        { type: 'boolean', notnull: true, default: false }
-        title:              { type: 'string(150)', fixed: true }
+        title:              { type: 'string(150)' }
         description:        { type: 'clob(65532)' }
 
     indexes:
@@ -78,11 +78,11 @@ DinListPair:
     columns:
         id:                 { type: 'integer(4)', primary: true, autoincrement: true }
         list_id:            { type: 'integer(4)', notnull: true }
-        keyword:            { type: 'string(150)', fixed: true, notnull: true }
+        keyword:            { type: 'string(150)', notnull: true }
         is_enabled:         { type: 'boolean', notnull: true, default: true }
         is_public:          { type: 'boolean', notnull: true, default: true }
         is_editable:        { type: 'boolean', notnull: true, default: true }
-        title:              { type: 'string(250)', fixed: true }
+        title:              { type: 'string(250)' }
         description:        { type: 'clob(65532)' }
         sequence:           { type: 'integer(4)' }
 

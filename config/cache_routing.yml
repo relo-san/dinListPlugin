@@ -1,0 +1,30 @@
+
+# This file is part of the dinListPlugin package.
+# (c) DineCat, 2010 http://dinecat.com/
+#
+# For the full copyright and license information, please view the LICENSE file,
+# that was distributed with this package, or see http://www.dinecat.com/din/license.html
+
+# dinListPlugin cache routing configuration
+#
+# @package     dinListPlugin
+# @subpackage  config
+# @author      Nicolay N. Zyk <relo.san@gmail.com>
+
+routes:
+    global_list:
+        type:               'prepared'
+        get:
+            model:          'DinList'
+            method:         'getPreparedList'
+            path:           ':_root/DinList/global_list/:model'
+            key:            ':name.:_i18n'
+        remove:
+            default:
+                path:       ':_root/DinList/global_list/:model'
+                key:        '*'
+
+links:
+    DinList:                ['global_list']
+
+#EOF
